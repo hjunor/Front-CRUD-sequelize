@@ -1,13 +1,23 @@
 import React from "react";
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import { signIn } from "./SingniActions";
 // import { Container } from './styles';
 
-const SignIn = () => {
+const SignIn = ({ account, signIn }) => {
+  const submitHandler = (e) => {
+    e.preventDefault();
+
+    signIn({ email: "hjunor@gmail.com", password: "3n5df3k9" });
+  };
+
+  console.log("*** SignIn.account", account);
+
   return (
     <div className="container h-100 pt-5">
       <h3>Sing In</h3>
       <div className="d-flex flex-column h-100">
-        <form action="">
+        <form onSubmit={submitHandler}>
           <div className="form-group">
             <label htmlFor="">Email</label>
             <input
@@ -39,4 +49,8 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+const mapStateToProps = (state) => {
+  return { account: state.signIn.account };
+};
+
+export default connect(mapStateToProps, { signIn })(SignIn);
