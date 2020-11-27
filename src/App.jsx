@@ -1,47 +1,63 @@
 import React from "react";
 import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
+import Home from "./screens/Home";
+import ManageLinksCreate from "./screens/Manage/Create";
+import ManageLinksEdit from "./screens/Manage/Edit";
+import ManageLinks from "./screens/Manage/Links";
+import SignIn from "./screens/SignIn";
+import SignUp from "./screens/SignUp";
 
 const App = () => {
   return (
     <Router>
       <div>
         <nav>
-          <ul>
-            <li>
-              <Link to="/sign-in">Sign in</Link>
+          <ul className="nav justify-content-center">
+            <li className="nav-item">
+              <Link className="nav-link active" to="/sign-in">
+                Sign in
+              </Link>
             </li>
-            <li>
-              <Link to="/sign-up">Sign up</Link>
+            <li className="nav-item">
+              <Link className="nav-link active" to="/sign-up">
+                Sign up
+              </Link>
             </li>
-            <li>
-              <Link to="/manage/links/create">Create Link</Link>
+            <li className="nav-item">
+              <Link className="nav-link active" to="/manage/links/create">
+                Create Link
+              </Link>
             </li>
-            <li>
-              <Link to="/manage/links/edit">Edit Link</Link>
+            <li className="nav-item">
+              <Link className="nav-link active" to="/manage/links/edit">
+                Edit Link
+              </Link>
             </li>
-            <li>
-              <Link to="/manage/links">Links</Link>
+            <li className="nav-item">
+              <Link className="nav-link active" to="/manage/links">
+                Links
+              </Link>
             </li>
           </ul>
         </nav>
         <Switch>
           <Route path="/sign-in">
-            <h1>Sign in</h1>
+            <SignIn />
           </Route>
           <Route path="/sign-up">
-            <h1>Sign up</h1>
+            <SignUp />
           </Route>
           <Route path="/manage/links/create">
-            <h1>Create Link</h1>
+            <ManageLinksCreate />
           </Route>
           <Route path="/manage/links/edit">
-            <h1>Edit Link</h1>
+            <ManageLinksEdit />
           </Route>
           <Route path="/manage/links">
-            <h1>Links</h1>
+            <ManageLinks />
           </Route>
           <Route path="/">
-            <h1>Home</h1>
+            <Home />
           </Route>
         </Switch>
       </div>
