@@ -1,4 +1,4 @@
-import { SIGN_IN } from "./SingniActions";
+import { SIGN_IN } from "./SingInActions";
 
 const initialState = {
   account: null,

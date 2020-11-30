@@ -1,8 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { signIn } from "./SingniActions";
-// import { Container } from './styles';
+import { signIn } from "./SingInActions";
 
 const SignIn = ({ account, signIn }) => {
   const submitHandler = (e) => {

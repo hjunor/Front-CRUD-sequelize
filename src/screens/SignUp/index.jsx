@@ -1,35 +1,48 @@
 import React from "react";
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-// import { Container } from './styles';
+import { signUp } from "./SignUpActions";
 
-const SignUp = () => {
+const SignUp = ({ signUp, account }) => {
+  const submitHandler = (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData);
+
+    signUp(data);
+  };
+
   return (
     <div className="container h-100  pt-5">
-      <h3>Sing Up</h3>
+      <h3>Sign Up</h3>
       <div className="d-flex flex-column h-100 ">
-        <form action="">
+        <form onSubmit={submitHandler}>
           <div className="form-group">
             <label htmlFor="">Email</label>
             <input
               placeholder="email@exemplo.com"
               type="email"
               className="form-control"
+              name="email"
             />
           </div>
           <div className="form-group">
-            <label htmlFor="">Senha</label>
+            <label htmlFor="">Password</label>
             <input
               placeholder="********"
               type="password"
               className="form-control"
+              name="password"
             />
           </div>
           <div className="form-group">
-            <label htmlFor="">Confirmar senha</label>
+            <label htmlFor="">Password Confirmation</label>
             <input
               placeholder="********"
               type="password"
               className="form-control"
+              name="password_confirmation"
             />
           </div>
           <div>
@@ -47,4 +60,7 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+const mapStateToProps = (state) => {
+  return { account: state.signUp.account };
+};
+export default connect(mapStateToProps, { signUp })(SignUp);
