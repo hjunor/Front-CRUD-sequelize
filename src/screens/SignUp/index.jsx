@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { signUp } from "./SignUpActions";
 
 const SignUp = ({ signUp, account }) => {
@@ -12,6 +12,10 @@ const SignUp = ({ signUp, account }) => {
 
     signUp(data);
   };
+
+  if (account) {
+    return <Redirect to="/manage/links" />;
+  }
 
   return (
     <div className="container h-100  pt-5">

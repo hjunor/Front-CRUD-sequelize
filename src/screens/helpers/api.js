@@ -1,6 +1,6 @@
 import axios from "axios";
 export const getApiUrl = (path) => {
-  return `http://locallhost:3001${path}`;
+  return `http://localhost:3001${path}`;
 };
 
 export const getheaders = () => {
@@ -11,6 +11,5 @@ export const apiPost = (path, data = {}) => {
   const options = {
     headers: getheaders(),
   };
-
   return axios.post(url, data, options);
 };
