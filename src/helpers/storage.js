@@ -19,5 +19,5 @@ export const setCookie = (name, value, options) => {
 };
 export const removeCookie = (name, options) => {
   if (!name) return null;
-  cookie.remove(...defaultOptions, ...options);
+  cookie.remove(name, { ...defaultOptions, ...options });
 };
