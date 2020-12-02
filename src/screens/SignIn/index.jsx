@@ -1,17 +1,20 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { signIn } from "./SingInActions";
 
 const SignIn = ({ account, signIn }) => {
   const submitHandler = (e) => {
     e.preventDefault();
+    const formData = new FormData(e.target);
 
-    signIn({ email: "hjunor@gmail.com", password: "3n5df3k9" });
+    const data = Object.fromEntries(formData);
+    signIn(data);
   };
 
-  console.log("*** SignIn.account", account);
-
+  if (account) {
+    return <Redirect to="/manage/links" />;
+  }
   return (
     <div className="container h-100 pt-5">
       <h3>Sing In</h3>
@@ -23,6 +26,7 @@ const SignIn = ({ account, signIn }) => {
               placeholder="email@exemplo.com"
               type="email"
               className="form-control"
+              name="email"
             />
           </div>
           <div className="form-group">
@@ -31,6 +35,7 @@ const SignIn = ({ account, signIn }) => {
               placeholder="********"
               type="password"
               className="form-control"
+              name="password"
             />
           </div>
           <div>

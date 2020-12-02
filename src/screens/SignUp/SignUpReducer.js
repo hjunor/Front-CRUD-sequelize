@@ -1,4 +1,4 @@
-import { setAccount, setRefreshToken, setToken } from "../helpers/account";
+import { setAccount, setRefreshToken, setToken } from "../../helpers/account";
 import { SIGN_UP } from "./SignUpActions";
 
 const initialState = {
