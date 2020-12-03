@@ -1,17 +1,23 @@
-const { LINK_CREATE } = require("../actions/LinksActions");
+const { LINK_CREATE, LINK_LIST } = require("../actions/LinksActions");
 
 const initialState = {
-  state: null,
+  link: null,
+  links: [],
 };
 export default function (state = initialState, action) {
   const { type, payload } = action;
   switch (type) {
-    case LINK_CREATE:
+    case LINK_CREATE: {
       const response = payload ? payload.data : null;
       const link = response ? response.data : null;
 
       return { ...state, link };
-
+    }
+    case LINK_LIST: {
+      const response = payload ? payload.data : null;
+      const links = response ? response.data : null;
+      return { ...state, links };
+    }
     default:
       return state;
   }
