@@ -34,7 +34,7 @@ export default function (state = initialState, action) {
       if (token) setToken(token);
       if (refreshToken) setRefreshToken(refreshToken);
 
-      return { ...initialState, account };
+      return { ...state, account };
     case SING_OUT:
       removeAccount();
       removeToken();

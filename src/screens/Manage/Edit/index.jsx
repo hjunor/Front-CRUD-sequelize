@@ -1,28 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Layout from "../../Layouts/Manage";
-// import { Container } from './styles';
+import { useParams } from "react-router-dom";
+import { linkGet } from "../../../actions/LinksActions";
+import { connect } from "react-redux";
+import { getFormData } from "../../../helpers/form";
+import FormGroup from "../../../components/FormGroup";
+import FormCheck from "../../../components/FormCheck";
+const Edit = ({ link, linkGet }) => {
+  const { id } = useParams();
 
-const Edit = () => {
+  useEffect(() => {
+    linkGet(id);
+  }, [id, linkGet]);
+  console.log("*** edit.id ", id);
+  console.log("*** edit.link ", link);
+  const submitHandler = (e) => {
+    e.preventDefault();
+    //   const data = getFormData(e);
+  };
   return (
     <Layout>
       <h3>Edit</h3>
       <div>
-        <form action="">
-          <div className="form-group">
-            <label htmlFor="">Label</label>
-            <input type="text" className="form-control" />
-          </div>
-          <div className="form-group">
-            <label htmlFor="">Url</label>
-            <input type="url" className="form-control" />
-          </div>
-          <div className="form-group form-check">
-            <label className="form-check-label">
-              <input type="checkbox" name="isSocial" />
-              <span className="form-check-sign"></span>
-              isSocial
-            </label>
-          </div>
+        <form onSubmit={submitHandler}>
+          <FormGroup label="Label" name="label" data={link} type="text" />
+          <FormGroup label="Label" name="label" data={link} type="text" />
+          <FormCheck label="isSocial" name="isSocial" data={link} />
+
           <div>
             <button className="btn btn-primary btn-round" type="submit">
               ok
@@ -33,5 +37,10 @@ const Edit = () => {
     </Layout>
   );
 };
+const mapStateToProps = (state) => {
+  return {
+    link: state.link.link,
+  };
+};
 
-export default Edit;
+export default connect(mapStateToProps, { linkGet })(Edit);
