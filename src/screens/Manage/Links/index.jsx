@@ -17,7 +17,7 @@ const Links = ({
 }) => {
   useEffect(() => {
     linkList();
-  }, [linkList, links, linkToRemove]);
+  }, [linkList]);
 
   const cancelDelete = (e) => setLinkToRemove(null);
   const confirmDelete = (e) => {
@@ -81,7 +81,7 @@ const Links = ({
             );
           })
         : null}
-      {linkToRemove ? (
+      {!!linkToRemove ? (
         <div className="alert alert-danger rounded float-center shadow-bold">
           <h4 className="alert-heading">Delete Confirmation!</h4>
           <p>Are you sure you want do delete, this action cannot be undone</p>
