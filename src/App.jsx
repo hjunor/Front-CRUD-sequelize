@@ -18,16 +18,20 @@ const App = ({ initAccount }) => {
       <div>
         <nav>
           <ul className="nav justify-content-center">
-            <li className="nav-item">
-              <Link className="nav-link active" to="/sign-in">
-                Sign in
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link active" to="/sign-up">
-                Sign up
-              </Link>
-            </li>
+            {!initAccount ? (
+              <>
+                <li className="nav-item">
+                  <Link className="nav-link active" to="/sign-in">
+                    Sign in
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link active" to="/sign-up">
+                    Sign up
+                  </Link>
+                </li>
+              </>
+            ) : null}
 
             <li className="nav-item">
               <Link className="nav-link active" to="/manage/links/create">

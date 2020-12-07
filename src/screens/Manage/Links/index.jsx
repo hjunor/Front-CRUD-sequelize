@@ -8,7 +8,6 @@ const Links = ({ links, linkList }) => {
   useEffect(() => {
     linkList();
   }, [linkList]);
-  console.log("*** linkList", links);
   return (
     <Layout>
       <div className="row">
