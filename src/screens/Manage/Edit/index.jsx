@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Layout from "../../Layouts/Manage";
-import { useParams } from "react-router-dom";
+import { useParams, Redirect } from "react-router-dom";
 import { linkGet, linkUpdate } from "../../../actions/LinksActions";
 import { connect } from "react-redux";
 import { getFormData } from "../../../helpers/form";
@@ -17,8 +17,10 @@ const Edit = ({ link, linkGet, linkUpdate }) => {
     e.preventDefault();
     const data = getFormData(e);
     linkUpdate(id, data);
-  };
 
+    return <Redirect to="/manage/links" />;
+  };
+  console.log("*** linkupdate", !!linkUpdate);
   return (
     <Layout>
       <h3>Edit</h3>

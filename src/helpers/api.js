@@ -29,14 +29,14 @@ export const apiPut = (path, data = {}) => {
   return axios.put(url, data, options);
 };
 
-export const apiGet = (path, params) => {
+export const apiGet = (path) => {
   const url = getApiUrl(path);
   const options = {
     headers: getheaders(),
   };
   return axios.get(url, options);
 };
-export const apiDelete = (path, params) => {
+export const apiDelete = (path) => {
   const url = getApiUrl(path);
   const options = {
     headers: getheaders(),
