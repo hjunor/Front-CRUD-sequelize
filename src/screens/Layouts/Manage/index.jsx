@@ -1,8 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import { signOut } from "../../../actions/AccountActions";
-// import { Container } from './styles';
 
 const Layout = ({ children, signOut, account }) => {
   if (!account) {
@@ -18,13 +17,18 @@ const Layout = ({ children, signOut, account }) => {
       <nav className="navbar navbar-expand-lg bg-primary text-light">
         <div className="container d-flex w-100 justify-content-between">
           <div>
-            <span>BACK</span>
+            <h4 className="font-weight-bold">GerLinks</h4>
           </div>
           <div className="text-center">
-            <strong>Links</strong>
+            <Link className="text-link font-weight-bold" to="/manege/links">
+              Links
+            </Link>
           </div>
           <div>
-            <button className=" btn btn-clear" onClick={signOutHandler}>
+            <button
+              className=" btn btn-clear font-weight-bold"
+              onClick={signOutHandler}
+            >
               Exit
             </button>
           </div>

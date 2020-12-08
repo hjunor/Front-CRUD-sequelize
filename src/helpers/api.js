@@ -1,7 +1,5 @@
 import axios from "axios";
-import { getToken } from "./account";
-import { secondsToRedadableTime } from "./dateTime";
-import { getTokenExpire } from "./jwt";
+import { getToken, getRefreshToken } from "./account";
 
 export const getApiUrl = (path) => {
   return `http://localhost:3001${path}`;
@@ -10,9 +8,6 @@ export const getApiUrl = (path) => {
 export const getheaders = () => {
   const token = getToken();
   if (!token) return {};
-
-  const secondsToExpire = getTokenExpire(token) - Date.now() / 1000;
-  const readableTime = secondsToRedadableTime(secondsToExpire);
 
   return {
     Authorization: `Bearer ${token}`,
@@ -46,5 +41,21 @@ export const apiDelete = (path) => {
   const options = {
     headers: getheaders(),
   };
-  return axios.delete(url, options);
+  const result = axios.delete(url, options);
+  return result;
+};
+
+export const apiRefreshToken = () => {
+  const url = getApiUrl("/auth/refresh");
+  const refreshToken = getRefreshToken();
+
+  const options = {
+    headers: {
+      Authorization: `Bearer ${refreshToken}`,
+    },
+  };
+
+  const result = axios.post(url, {}, options);
+
+  return result;
 };

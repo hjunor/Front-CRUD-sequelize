@@ -30,10 +30,13 @@ const Links = ({
     <Layout>
       <div className="row">
         <div className="col">
-          <h2>Links</h2>
+          <h2 className="text-primary font-weight-bold">Your Links</h2>
         </div>
         <div className="col text-right align-self-bottom pt-2">
-          <Link to="/manage/links/create" className="btn btn-primary">
+          <Link
+            to="/manage/links/create"
+            className="btn btn-primary font-weight-bold"
+          >
             Add
           </Link>
         </div>
@@ -48,29 +51,32 @@ const Links = ({
                 : "border border-transparent";
 
             return (
-              <div key={link.id}>
+              <div className="mt-2" key={link.id}>
                 <div
                   className={`shadow pb-2 pt-2 pl-3 pr-3 d-flex flex-row justify-content-between ${boder}`}
                 >
-                  <div className="pr-3">
+                  {/* <div className="pr-3">
                     <img
                       src="https://via.placeholder.com/100"
                       alt="Link icon"
                     />
-                  </div>
+                  </div> */}
                   <div className="align-self-center">
-                    <span className="text-primary clearfix">{link.label}</span>
-                    <span className="text-primary clearfix">{link.url}</span>
+                    <a href={link.url} target="_blank" rel="noreferrer">
+                      <strong className="text-primary clearfix">
+                        {link.label}
+                      </strong>
+                    </a>
                   </div>
                   <div className="ml-auto p-2 clearfix">
                     <Link
-                      className="btn btn-primary"
+                      className="btn btn-primary font-weight-bold"
                       to={`/manage/links/edit/${link.id}`}
                     >
                       Edit
                     </Link>
                     <button
-                      className="ml-2 btn btn-primary "
+                      className="ml-2 btn btn-primary font-weight-bold"
                       onClick={deleteClick}
                     >
                       X

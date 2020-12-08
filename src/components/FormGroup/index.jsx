@@ -21,7 +21,7 @@ const FormGroup = ({ name, label, type, data }) => {
 
   return (
     <div className="form-group">
-      <label htmlFor="">{label}</label>
+      <label className="font-weight-bold">{label}</label>
       <input className="form-control" {...inputProps} />
     </div>
   );

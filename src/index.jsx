@@ -5,10 +5,12 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import store from "./store";
 import "./styles/main.scss";
+import TokenRefresh from "./components/TokenRefresh";
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
+      <TokenRefresh />
       <App />
     </Provider>
   </React.StrictMode>,

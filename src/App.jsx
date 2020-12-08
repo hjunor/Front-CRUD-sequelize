@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./screens/Home";
 import ManageLinksCreate from "./screens/Manage/Create";
 import ManageLinksEdit from "./screens/Manage/Edit";
@@ -16,40 +16,6 @@ const App = ({ initAccount }) => {
   return (
     <Router>
       <div>
-        <nav>
-          <ul className="nav justify-content-center">
-            {!initAccount ? (
-              <>
-                <li className="nav-item">
-                  <Link className="nav-link active" to="/sign-in">
-                    Sign in
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link active" to="/sign-up">
-                    Sign up
-                  </Link>
-                </li>
-              </>
-            ) : null}
-
-            <li className="nav-item">
-              <Link className="nav-link active" to="/manage/links/create">
-                Create Link
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link active" to="/manage/links/edit">
-                Edit Link
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link active" to="/manage/links">
-                Links
-              </Link>
-            </li>
-          </ul>
-        </nav>
         <Switch>
           <Route path="/sign-in">
             <SignIn />

@@ -21,9 +21,9 @@ const FormCheck = ({ name, label, data }) => {
 
   return (
     <div className="form-group form-check">
-      <label className="form-check-label">
+      <label className="form-check-label font-weight-bold">
         <input {...inputProps} />
-        <span className="form-check-sign"></span>
+        <span className="form-check-sign "></span>
         {label}
       </label>
     </div>

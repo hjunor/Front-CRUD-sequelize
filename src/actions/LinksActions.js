@@ -6,11 +6,13 @@ export const LINK_GET = "LINK_GET";
 export const LINK_UPDATE = "LINK_UPDATE";
 export const LINK_TO_REMOVE = "LINK_TO_REMOVE";
 export const LINK_REMOVE = "LINK_REMOVE";
+export const LINK_CREATE_CLEAR = "LINK_CREATE_CLEAR";
 
 export const linkCreate = (data) => {
   const isSocial = !!data.isSocial;
   delete data.isSocial;
   const payload = apiPost("/link", { ...data, isSocial });
+
   return { type: LINK_CREATE, payload };
 };
 
@@ -37,4 +39,8 @@ export const setLinkToRemove = (link) => {
 export const linkRemove = (link) => {
   const payload = apiDelete(`/link/${link.id}`);
   return { type: LINK_REMOVE, payload: link };
+};
+
+export const linkCreateClear = (link) => {
+  return { type: LINK_CREATE_CLEAR, payload: link };
 };

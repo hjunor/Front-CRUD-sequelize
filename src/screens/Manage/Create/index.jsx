@@ -2,39 +2,34 @@ import React from "react";
 import { connect } from "react-redux";
 import { getFormData } from "../../../helpers/form";
 import Layout from "../../Layouts/Manage";
-import { linkCreate } from "../../../actions/LinksActions";
+import { linkCreate, linkCreateClear } from "../../../actions/LinksActions";
 import { Redirect } from "react-router-dom";
-const Create = ({ link, linkCreate }) => {
+import FormGroup from "../../../components/FormGroup";
+import FormCheck from "../../../components/FormCheck";
+
+const Create = ({ linkNew, linkCreate, linkCreateClear }) => {
   const submitHandler = (e) => {
     e.preventDefault();
     const data = getFormData(e);
     linkCreate(data);
   };
-  if (link) {
+  console.log("*** Link new 2", linkNew);
+
+  if (!!linkNew) {
+    linkCreateClear(linkNew);
+
     return <Redirect to="/manage/links" />;
   }
 
-  console.log("*** create.link", link);
   return (
     <Layout>
-      <h3>Create</h3>
+      <h2 className="text-primary font-weight-bold">Create</h2>
       <div>
         <form onSubmit={submitHandler}>
-          <div className="form-group">
-            <label htmlFor="">Label</label>
-            <input type="text" className="form-control" name="label" required />
-          </div>
-          <div className="form-group">
-            <label htmlFor="">Url</label>
-            <input type="url" className="form-control" name="url" required />
-          </div>
-          <div className="form-group form-check">
-            <label className="form-check-label">
-              <input type="checkbox" name="isSocial" />
-              <span className="form-check-sign"></span>
-              isSocial
-            </label>
-          </div>
+          <FormGroup label="Label" name="label" type="text" />
+          <FormGroup label="Url" name="url" type="text" />
+          <FormCheck label="isSocial" name="isSocial" />
+
           <div>
             <button className="btn btn-primary btn-round" type="submit">
               ok
@@ -46,6 +41,8 @@ const Create = ({ link, linkCreate }) => {
   );
 };
 const mapStateToProps = (state) => {
-  return { link: state.link.link };
+  return { linkNew: state.link.linkNew };
 };
-export default connect(mapStateToProps, { linkCreate })(Create);
+export default connect(mapStateToProps, { linkCreateClear, linkCreate })(
+  Create
+);

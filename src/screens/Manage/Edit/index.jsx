@@ -1,12 +1,16 @@
 import React, { useEffect } from "react";
 import Layout from "../../Layouts/Manage";
 import { useParams, Redirect } from "react-router-dom";
-import { linkGet, linkUpdate } from "../../../actions/LinksActions";
+import {
+  linkGet,
+  linkUpdate,
+  linkCreateClear,
+} from "../../../actions/LinksActions";
 import { connect } from "react-redux";
 import { getFormData } from "../../../helpers/form";
 import FormGroup from "../../../components/FormGroup";
 import FormCheck from "../../../components/FormCheck";
-const Edit = ({ link, linkGet, linkUpdate }) => {
+const Edit = ({ link, linkNew, linkGet, linkUpdate, linkCreateClear }) => {
   const { id } = useParams();
 
   useEffect(() => {
@@ -17,10 +21,13 @@ const Edit = ({ link, linkGet, linkUpdate }) => {
     e.preventDefault();
     const data = getFormData(e);
     linkUpdate(id, data);
-
-    return <Redirect to="/manage/links" />;
   };
-  console.log("*** linkupdate", !!linkUpdate);
+
+  if (linkNew) {
+    linkCreateClear(linkNew);
+    return <Redirect to="/manage/links" />;
+  }
+
   return (
     <Layout>
       <h3>Edit</h3>
@@ -42,7 +49,12 @@ const Edit = ({ link, linkGet, linkUpdate }) => {
 const mapStateToProps = (state) => {
   return {
     link: state.link.link,
+    linkNew: state.link.linkNew,
   };
 };
 
-export default connect(mapStateToProps, { linkGet, linkUpdate })(Edit);
+export default connect(mapStateToProps, {
+  linkCreateClear,
+  linkGet,
+  linkUpdate,
+})(Edit);

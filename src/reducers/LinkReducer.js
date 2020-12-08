@@ -5,6 +5,7 @@ const {
   LINK_UPDATE,
   LINK_TO_REMOVE,
   LINK_REMOVE,
+  LINK_CREATE_CLEAR,
 } = require("../actions/LinksActions");
 
 const initialState = {
@@ -16,15 +17,14 @@ export default function (state = initialState, action) {
   switch (type) {
     case LINK_CREATE: {
       const response = payload ? payload.data : null;
-      const link = response ? response.data : null;
-
-      return { ...state, link };
+      const linkNew = response ? response.data : null;
+      return { ...state, linkNew };
     }
     case LINK_UPDATE: {
       const response = payload ? payload.data : null;
-      const link = response ? response.data : null;
+      const linkNew = response ? response.data : null;
 
-      return { ...state, link };
+      return { ...state, linkNew };
     }
     case LINK_LIST: {
       const response = payload ? payload.data : null;
@@ -44,6 +44,9 @@ export default function (state = initialState, action) {
         (link) => link.id !== state.linkToRemove.id
       );
       return { ...state, linkToRemove: null, links };
+    }
+    case LINK_CREATE_CLEAR: {
+      return { ...state, linkNew: null };
     }
 
     default:
