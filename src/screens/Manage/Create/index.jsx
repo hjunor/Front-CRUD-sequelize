@@ -6,14 +6,15 @@ import { linkCreate, linkCreateClear } from "../../../actions/LinksActions";
 import { Redirect } from "react-router-dom";
 import FormGroup from "../../../components/FormGroup";
 import FormCheck from "../../../components/FormCheck";
-
+import { Container, Text, WrapperButton } from "./styles";
+import Button from "../../../components/Button";
+import ButtonLink from "../../../components/ButtonLink";
 const Create = ({ linkNew, linkCreate, linkCreateClear }) => {
   const submitHandler = (e) => {
     e.preventDefault();
     const data = getFormData(e);
     linkCreate(data);
   };
-  console.log("*** Link new 2", linkNew);
 
   if (!!linkNew) {
     linkCreateClear(linkNew);
@@ -23,20 +24,32 @@ const Create = ({ linkNew, linkCreate, linkCreateClear }) => {
 
   return (
     <Layout>
-      <h2 className="text-primary font-weight-bold">Create</h2>
-      <div>
-        <form onSubmit={submitHandler}>
-          <FormGroup label="Label" name="label" type="text" />
-          <FormGroup label="Url" name="url" type="text" />
-          <FormCheck label="isSocial" name="isSocial" />
+      <Container>
+        <Text>Create</Text>
+        <div>
+          <form onSubmit={submitHandler}>
+            <FormGroup label="Label" name="label" type="text" width="75vh" />
+            <FormGroup label="Url" name="url" type="text" width="75vh" />
+            <FormCheck label="isSocial" name="isSocial" />
 
-          <div>
-            <button className="btn btn-primary btn-round" type="submit">
-              ok
-            </button>
-          </div>
-        </form>
-      </div>
+            <WrapperButton>
+              <Button
+                name="ok"
+                color="#FFF"
+                title="Ok"
+                type="submit"
+                width="15vh"
+              />
+              <ButtonLink
+                name="manage/links"
+                color="#FFF"
+                title="voltar"
+                width="15vh"
+              />
+            </WrapperButton>
+          </form>
+        </div>
+      </Container>
     </Layout>
   );
 };
