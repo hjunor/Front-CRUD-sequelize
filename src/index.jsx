@@ -4,7 +4,6 @@ import { Provider } from "react-redux";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import store from "./store";
-import "./styles/main.scss";
 import TokenRefresh from "./components/TokenRefresh";
 
 ReactDOM.render(
