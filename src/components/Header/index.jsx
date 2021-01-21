@@ -3,7 +3,6 @@ import Switch from "react-switch";
 import { ThemeContext } from "styled-components";
 import { Container, WraperMenu, TextLogo } from "./styles";
 import { shade } from "polished";
-import logo from "../../styles/assets/logo.svg";
 
 const Header = ({ toggleTheme }) => {
   const { colors, title } = useContext(ThemeContext);
@@ -12,7 +11,6 @@ const Header = ({ toggleTheme }) => {
     <Container>
       <WraperMenu>
         <TextLogo>
-          <img src={logo} />
           <p>Hero Link</p>
         </TextLogo>
         <Switch
