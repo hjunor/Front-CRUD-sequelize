@@ -13,13 +13,13 @@ export const getheaders = () => {
     Authorization: `Bearer ${token}`,
   };
 };
-export const apiPost = async (path, data = {}) => {
+export const apiPost = (path, data = {}) => {
   const url = getApiUrl(path);
   const options = {
     headers: getheaders(),
   };
 
-  const res = await axios.post(url, data, options);
+  const res = axios.post(url, data, options);
 
   return res;
 };
