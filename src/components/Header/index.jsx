@@ -12,7 +12,7 @@ const Header = ({ toggleTheme }) => {
     <Container>
       <WraperMenu>
         <TextLogo>
-          {/* <img src={logo} /> */}
+          <img src={logo} />
           <p>Hero Link</p>
         </TextLogo>
         <Switch
