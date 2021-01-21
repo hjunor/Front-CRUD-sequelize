@@ -1,11 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Redirect, Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { signOut } from "../../../actions/AccountActions";
+import { Container, Wrapper, Links, WrapperChildren } from "./styles";
+import Button from "../../../components/Button";
+import ButtonLink from "../../../components/ButtonLink";
 
 const Layout = ({ children, signOut, account }) => {
   if (!account) {
-    return <Redirect to="/sign-in" />;
+    return <Redirect to="/home" />;
   }
   const signOutHandler = (e) => {
     e.preventDefault();
@@ -13,29 +16,22 @@ const Layout = ({ children, signOut, account }) => {
   };
 
   return (
-    <div className="layout">
-      <nav className="navbar navbar-expand-lg bg-primary text-light">
-        <div className="container d-flex w-100 justify-content-between">
-          <div>
-            <h4 className="font-weight-bold">GerLinks</h4>
-          </div>
-          <div className="text-center">
-            <Link className="text-link font-weight-bold" to="/manege/links">
-              Links
-            </Link>
-          </div>
-          <div>
-            <button
-              className=" btn btn-clear font-weight-bold"
-              onClick={signOutHandler}
-            >
-              Exit
-            </button>
-          </div>
+    <Container>
+      <Wrapper>
+        <Links to="/manage/links">Links: {account.email}</Links>
+        <div>
+          <ButtonLink name="manage/links/create" title="Add" width="100px" />
+          <Button
+            name="Exit"
+            title="Exit"
+            width="100px"
+            height="40px"
+            handler={signOutHandler}
+          />
         </div>
-      </nav>
-      <div className="container">{children}</div>
-    </div>
+      </Wrapper>
+      <WrapperChildren>{children}</WrapperChildren>
+    </Container>
   );
 };
 
