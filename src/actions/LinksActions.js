@@ -38,7 +38,7 @@ export const setLinkToRemove = (link) => {
 };
 export const linkRemove = (link) => {
   const payload = apiDelete(`/link/${link.id}`);
-  return { type: LINK_REMOVE, payload: link };
+  if (payload) return { type: LINK_REMOVE, payload: link };
 };
 
 export const linkCreateClear = (link) => {
