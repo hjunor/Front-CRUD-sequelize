@@ -2,7 +2,7 @@ import axios from "axios";
 import { getToken, getRefreshToken } from "./account";
 
 export const getApiUrl = (path) => {
-  return `http://localhost:3001${path}`;
+  return `https://links-back.herokuapp.com${path}`;
 };
 
 export const getheaders = () => {
@@ -13,12 +13,15 @@ export const getheaders = () => {
     Authorization: `Bearer ${token}`,
   };
 };
-export const apiPost = (path, data = {}) => {
+export const apiPost = async (path, data = {}) => {
   const url = getApiUrl(path);
   const options = {
     headers: getheaders(),
   };
-  return axios.post(url, data, options);
+
+  const res = await axios.post(url, data, options);
+
+  return res;
 };
 
 export const apiPut = (path, data = {}) => {
