@@ -12,7 +12,7 @@ const initialState = {
   link: null,
   links: [],
 };
-export default function (state = initialState, action) {
+export default function LinkReducer(state = initialState, action) {
   const { type, payload } = action;
   switch (type) {
     case LINK_CREATE: {

@@ -19,7 +19,7 @@ const initialState = {
   account: null,
   error: null,
 };
-export default function (state = initialState, action) {
+export default function AcoountReducer(state = initialState, action) {
   const { type, payload } = action;
 
   switch (type) {
