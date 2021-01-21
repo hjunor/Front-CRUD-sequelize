@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-
-const FormGroup = ({ name, label, type, data }) => {
+import Input from "../Input";
+import { Container } from "./styles";
+const FormGroup = ({ name, label, type, data, width, height }) => {
   const [value, setValue] = useState("");
 
   useEffect(() => {
@@ -17,13 +18,14 @@ const FormGroup = ({ name, label, type, data }) => {
     name,
     value: value || "",
     onChange: handleChange,
+    width,
+    height,
   };
-
   return (
-    <div className="form-group">
+    <Container>
       <label className="font-weight-bold">{label}</label>
-      <input className="form-control" {...inputProps} />
-    </div>
+      <Input {...inputProps} />
+    </Container>
   );
 };
 
