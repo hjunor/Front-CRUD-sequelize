@@ -17,6 +17,7 @@ import {
 
 const initialState = {
   account: null,
+  error: null,
 };
 export default function (state = initialState, action) {
   const { type, payload } = action;
@@ -24,6 +25,9 @@ export default function (state = initialState, action) {
   switch (type) {
     case SIGN_IN:
     case SIGN_UP:
+      if (!payload) {
+        return { ...state, error: { mesage: "Senha ou email errado" } };
+      }
       const response = payload ? payload.data : null;
       const account = response ? response.data : null;
       const metadata = response ? response.metadata : null;
