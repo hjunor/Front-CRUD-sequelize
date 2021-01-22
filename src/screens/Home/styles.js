@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import svg from "../../styles/assets/back.svg";
 export const Container = styled.div`
   width: 100%;
   height: 100%;
@@ -12,17 +11,16 @@ export const Container = styled.div`
 
 export const Image = styled.div`
   height: 60vh;
-  /* background: url(${svg}) no-repeat 700px bottom; */
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100vmax;
+  width: 100%;
 `;
 export const Text = styled.div`
   width: 70%;
   h1 {
     font-weight: bold;
-    font-size: 60px;
+    font-size: 6rem;
     color: ${(props) => props.theme.colors.text};
   }
   p {

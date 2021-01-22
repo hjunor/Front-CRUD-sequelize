@@ -14,7 +14,7 @@ import {
   Links,
 } from "./styles";
 import Input from "../../components/Input";
-import Button from "../../components/ButtonLink";
+import Button from "../../components/Button";
 const SignUp = ({ signUp, account }) => {
   const submitHandler = (e) => {
     e.preventDefault();
@@ -58,9 +58,7 @@ const SignUp = ({ signUp, account }) => {
           />
         </WrapperLabel>
         <WrapperButton>
-          <Button name="ok" color="#FFF" title="Ok" type="submit">
-            ok
-          </Button>
+          <Button name="ok" color="#FFF" title="Ok" type="submit" />
         </WrapperButton>
       </form>
       <WrapperText>
