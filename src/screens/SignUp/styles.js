@@ -16,6 +16,7 @@ export const Label = styled.label`
 export const WrapperLabel = styled.div`
   display: flex;
   flex-direction: column;
+  margin-top: 2vh;
 `;
 export const Text = styled.p`
   color: ${(props) => props.theme.colors.text};

@@ -10,9 +10,16 @@ export const GetButton = styled.button`
   width: ${(props) => (props.width ? props.width : "200px")};
   height: ${(props) => (props.height ? props.height : "40px")};
   font-weight: bold;
+  @media screen and (max-width: 600px) {
+    width: 70px;
+  }
+
 `;
 export const GetLink = styled(Link)`
   color: ${(props) => props.theme.colors.buttonText};
   width: ${(props) => (props.width ? props.width : "200px")};
   height: ${(props) => (props.height ? props.height : "40px")};
+  @media screen and (max-width: 600px) {
+    width: 70px;
+  }
 `;

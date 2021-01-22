@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { Link } from "styled-icons/bootstrap";
+import { Link } from "react-router-dom";
+
 
 export const Container = styled.div`
   display: flex;
@@ -16,6 +17,7 @@ export const Label = styled.label`
 export const WrapperLabel = styled.div`
   display: flex;
   flex-direction: column;
+  margin-top: 1.5vh;
 `;
 export const Text = styled.p`
   color: ${(props) => props.theme.colors.text};
@@ -38,7 +40,6 @@ export const TextHelp = styled.div`
   color: ${(props) => props.theme.colors.text};
   margin-right: 5px;
 `;
-
 export const Links = styled(Link)`
   color: ${(props) => props.theme.colors.text};
   font-weight: bold;
@@ -46,3 +47,4 @@ export const Links = styled(Link)`
     color: ${(props) => props.theme.colors.secundary};
   }
 `;
+

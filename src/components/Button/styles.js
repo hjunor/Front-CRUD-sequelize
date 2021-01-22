@@ -12,4 +12,7 @@ export const GetButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media screen and (max-width: 600px) {
+    width: 70px;
+  }
 `;

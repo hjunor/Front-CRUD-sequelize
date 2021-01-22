@@ -7,6 +7,7 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   width: 100%;
+
 `;
 
 export const Wrapper = styled.div`
@@ -21,6 +22,14 @@ export const Wrapper = styled.div`
     display: flex;
     width: 250px;
     justify-content: space-between;
+  }
+  @media screen and (max-width: 600px) {
+    div {
+    display: flex;
+    width: 180px;
+    justify-content: space-between;
+  }
+    padding: 8px;
   }
 `;
 

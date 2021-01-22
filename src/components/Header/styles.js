@@ -7,6 +7,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
+
 `;
 export const WraperMenu = styled.div`
   display: flex;
@@ -15,6 +16,12 @@ export const WraperMenu = styled.div`
   width: 100%;
   max-width: 980px;
   height: 60px;
+  @media screen and (max-width: 600px) {
+    width: 80%;
+  }
+  @media screen and (max-width: 980px) {
+    width: 80%;
+  }
 `;
 export const TextLogo = styled.div`
   display: flex;

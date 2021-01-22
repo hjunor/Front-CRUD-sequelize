@@ -36,7 +36,6 @@ const SignUp = ({ signUp, account }) => {
             placeholder="email@exemplo.com"
             type="email"
             name="email"
-            width="75vh"
           />
         </WrapperLabel>
         <WrapperLabel>
@@ -45,7 +44,6 @@ const SignUp = ({ signUp, account }) => {
             placeholder="********"
             type="password"
             name="password"
-            width="75vh"
           />
         </WrapperLabel>
         <WrapperLabel>
@@ -54,7 +52,6 @@ const SignUp = ({ signUp, account }) => {
             placeholder="********"
             type="password"
             name="password_confirmation"
-            width="75vh"
           />
         </WrapperLabel>
         <WrapperButton>
