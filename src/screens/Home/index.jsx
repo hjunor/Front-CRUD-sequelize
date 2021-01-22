@@ -16,9 +16,9 @@ const Home = () => {
           </p>
         </Text>
         <WraperButton>
-          <ButtonLink  color="#FFF" name="sign-in" title="Sign In" />
+          <ButtonLink width='200px'  color="#FFF" name="sign-in" title="Sign In" />
           <div />
-          <ButtonLink   color="#fff" name="sign-up" title="Sign Up" />
+          <ButtonLink  width='200px'   color="#fff" name="sign-up" title="Sign Up" />
         </WraperButton>
       </Container>
     
