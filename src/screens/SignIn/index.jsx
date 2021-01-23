@@ -46,7 +46,7 @@ const SignIn = ({ account, signIn }) => {
           />
         </WrapperLabel>
         <WrapperButton>
-          <Button  name="ok" color="#FFF" title="Ok" type="submit" />
+          <Button name="ok" min_width='200px' color="#FFF" title="Ok" type="submit" />
         </WrapperButton>
       </form>
       <WrapperText>

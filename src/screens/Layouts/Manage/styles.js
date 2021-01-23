@@ -26,7 +26,7 @@ export const Wrapper = styled.div`
   @media screen and (max-width: 600px) {
     div {
     display: flex;
-    width: 180px;
+    width: 150px;
     justify-content: space-between;
   }
     padding: 8px;

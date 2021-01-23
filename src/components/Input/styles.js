@@ -8,4 +8,8 @@ export const InputStyles = styled.input`
   padding: 20px;
   border-radius: 8px;
   outline: none;
+
+  @media screen and (max-width: 600px) {
+    width: 40vh;
+  }
 `;

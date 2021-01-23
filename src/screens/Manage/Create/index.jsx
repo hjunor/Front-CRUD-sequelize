@@ -26,7 +26,6 @@ const Create = ({ linkNew, linkCreate, linkCreateClear }) => {
     <Layout>
       <Container>
         <Text>Create</Text>
-        <div>
           <form onSubmit={submitHandler}>
             <FormGroup label="Label" name="label" type="text" width="75vh" />
             <FormGroup label="Url" name="url" type="text" width="75vh" />
@@ -48,7 +47,6 @@ const Create = ({ linkNew, linkCreate, linkCreateClear }) => {
               />
             </WrapperButton>
           </form>
-        </div>
       </Container>
     </Layout>
   );

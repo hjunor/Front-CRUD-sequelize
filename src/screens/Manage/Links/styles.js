@@ -43,6 +43,9 @@ export const Wrapper = styled.div`
 export const Text = styled.p`
   color: ${(props) => props.theme.colors.text};
   font-size: 16px;
+  @media screen and (max-width: 600px) {
+    font-size: 11px;
+  }
 `;
 export const ButtonIcon = styled.button`
   display: flex;

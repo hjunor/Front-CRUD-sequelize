@@ -2,9 +2,10 @@ import React from "react";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { signOut } from "../../../actions/AccountActions";
-import { Container, Wrapper, Links, WrapperChildren } from "./styles";
 import Button from "../../../components/Button";
 import ButtonLink from "../../../components/ButtonLink";
+import { Container, Wrapper, Links, WrapperChildren } from "./styles";
+
 
 const Layout = ({ children, signOut, account }) => {
   if (!account) {
@@ -20,12 +21,13 @@ const Layout = ({ children, signOut, account }) => {
       <Wrapper>
         <Links to="/manage/links">Links: {account.email}</Links>
         <div>
-          <ButtonLink name="manage/links/create" title="Add" width="100px" />
+          <ButtonLink name="manage/links/create" title="Add" width="100px" min_width="70px"/>
           <Button
             name="Exit"
             title="Exit"
             width="100px"
             height="40px"
+            min_width="70px" 
             handler={signOutHandler}
           />
         </div>

@@ -2,7 +2,7 @@ import React from "react";
 
 import { GetButton, GetLink } from "./styles";
 
-const ButtonLink = ({ color, name, title, handler, type, width, height }) => {
+const ButtonLink = ({ color, name, title, handler, type, width, height, min_width }) => {
   const inputProps = {
     type,
     onClick: handler,
@@ -10,10 +10,11 @@ const ButtonLink = ({ color, name, title, handler, type, width, height }) => {
     color,
     width,
     height,
+    min_width
   };
 
   return (
-    <GetLink width={width} height={height} to={`/${name}`}>
+    <GetLink min_width={min_width} width={width} height={height} to={`/${name}`}>
       <GetButton {...inputProps}>{title}</GetButton>
     </GetLink>
   );

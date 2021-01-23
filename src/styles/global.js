@@ -2,10 +2,6 @@ import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
 
- html{
-       font-size: 65.5%;
-
- }
   *{
     margin: 0;
     padding: 0;
@@ -24,7 +20,6 @@ export default createGlobalStyle`
     color: ${(props) => props.theme.colors.text};
     font-family: sans-serif;
     width: 100%;
-    font-size: 1.6rem;
 
   }
 `;
