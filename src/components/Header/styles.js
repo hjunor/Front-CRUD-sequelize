@@ -14,12 +14,15 @@ export const WraperMenu = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  max-width: 980px;
+  max-width:1230px;
   height: 60px;
   @media screen and (max-width: 600px) {
     width: 80%;
   }
   @media screen and (max-width: 980px) {
+    width: 80%;
+  }
+  @media screen and (max-width: 1380px) {
     width: 80%;
   }
 `;
