@@ -6,7 +6,7 @@
 </h1>
 
 <p align="center">
-  <a href="#rocket-sobre">Sobre</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#rocket-sobre">Descrição</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#collision-funcionalidades">Bibliotecas Utilizadas</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#zap-rodando-o-projeto">Rodando o Projeto</a>
@@ -16,7 +16,7 @@
 Hero Link
 </h2>
 
-## 🚀 Sobre a aplicação
+## 🚀 Descrição da Aplicação
 
 Aplicação Web Desenvolvida como projeto para desenvolvimento pessoal. Ela salva links que pode ser utilizados de maneira simples, como anotações, projeto em expanção. Ele tem autenticação e cookies para salvar token e refresh token.
 
@@ -38,7 +38,7 @@ Modo Dark e light 🔥.
 
 Esse projeto foi desenvolvido com a seguinte tecnologiaa:
 
-- [React](https://pt-br.reactjs.org/))
+- [React](https://pt-br.reactjs.org/)
 
 \* Para mais detalhes, veja o <kbd>[package.json](./package.json)</kbd>
 
