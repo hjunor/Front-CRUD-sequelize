@@ -10,6 +10,8 @@ export const Container = styled.div`
 `;
 
 export const Label = styled.label`
+  margin: 0.6rem 0 0.6rem 0;
+
   color: ${(props) => props.theme.colors.text};
   font-weight: bold;
 `;

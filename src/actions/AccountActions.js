@@ -12,8 +12,14 @@ export const signUp = (data) => {
 };
 
 export const signIn = (data) => {
-  const payload = apiPost("/auth/sign-in", data);
-  return { type: SIGN_IN, payload };
+  try {
+    const payload = apiPost("/auth/sign-in", data);
+
+    return { type: SIGN_IN, payload };
+  } catch (err) {
+    const { data } = err.response;
+    console.log("***data", data);
+  }
 };
 
 export const signOut = () => {

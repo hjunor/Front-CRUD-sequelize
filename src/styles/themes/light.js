@@ -2,12 +2,12 @@ export default function light() {
   return {
     title: "light",
     colors: {
-      primary: "#7E2E84",
-      secundary: "#D14081",
+      primary: "#38369A",
+      secundary: "#7977CF",
       background: "#E4DEE4",
       text: "#333333",
-      button: "#66306A",
-      buttonText: "#ffffff",
+      button: "#38369A",
+      buttonText: "#e6e6e6",
       card: "#ffffff",
     },
   };

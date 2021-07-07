@@ -39,7 +39,6 @@ const Links = ({
       linkRemove(linkToRemove);
     }
   };
-  console.log("***link", linkToRemove);
   return (
     <Layout>
       <Container>

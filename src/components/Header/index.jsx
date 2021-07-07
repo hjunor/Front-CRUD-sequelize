@@ -23,7 +23,7 @@ const Header = ({ toggleTheme }) => {
           offHandleColor="#333"
           onHandleColor="#fff"
           handleDiameter={20}
-          offColor={shade(0.19, colors.primary)}
+          offColor={shade(0.19, colors.secundary)}
           onColor={colors.secundary}
         />
       </WraperMenu>

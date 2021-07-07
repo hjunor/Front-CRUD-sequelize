@@ -31,22 +31,20 @@ const SignIn = ({ account, signIn }) => {
       <form onSubmit={submitHandler}>
         <WrapperLabel>
           <Label>Email</Label>
-          <Input
-            placeholder="email@exemplo.com"
-            type="email"
-            name="email"
-          />
+          <Input placeholder="email@exemplo.com" type="email" name="email" />
         </WrapperLabel>
         <WrapperLabel>
           <Label>Senha</Label>
-          <Input
-            placeholder="********"
-            type="password"
-            name="password"
-          />
+          <Input placeholder="********" type="password" name="password" />
         </WrapperLabel>
         <WrapperButton>
-          <Button name="ok" min_width='200px' color="#FFF" title="Ok" type="submit" />
+          <Button
+            name="ok"
+            min_width="200px"
+            color="#FFF"
+            title="Ok"
+            type="submit"
+          />
         </WrapperButton>
       </form>
       <WrapperText>

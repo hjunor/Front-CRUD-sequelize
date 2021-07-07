@@ -18,6 +18,7 @@ export const WrapperButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 2rem;
   button {
     margin-right: 30px;
   }

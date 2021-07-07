@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-
 export const Container = styled.div`
   display: flex;
   align-items: center;
@@ -11,6 +10,7 @@ export const Container = styled.div`
 `;
 
 export const Label = styled.label`
+  margin: 0.6rem 0 0.6rem 0;
   color: ${(props) => props.theme.colors.text};
   font-weight: bold;
 `;
@@ -47,4 +47,3 @@ export const Links = styled(Link)`
     color: ${(props) => props.theme.colors.secundary};
   }
 `;
-

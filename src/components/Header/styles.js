@@ -1,20 +1,18 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  background-color: ${(props) =>
-    props.theme.colors.primary === "#7E2E84" ? "#fff" : "#333"};
+  background-color: ${(props) => props.theme.colors.primary};
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-
 `;
 export const WraperMenu = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  max-width:1230px;
+  max-width: 1230px;
   height: 60px;
   @media screen and (max-width: 600px) {
     width: 80%;

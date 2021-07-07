@@ -29,11 +29,10 @@ const Edit = ({ link, linkNew, linkGet, linkUpdate, linkCreateClear }) => {
     linkCreateClear(linkNew);
     return <Redirect to="/manage/links" />;
   }
-  console.log(link);
   return (
     <Layout>
       <Container>
-        <Text>Edit</Text>
+        <Text>Editar Link</Text>
 
         <form onSubmit={submitHandler}>
           <FormGroup

@@ -22,4 +22,7 @@ export default createGlobalStyle`
     width: 100%;
 
   }
+  button{
+    cursor: pointer;
+  }
 `;

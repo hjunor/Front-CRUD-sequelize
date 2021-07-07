@@ -2,7 +2,8 @@ import axios from "axios";
 import { getToken, getRefreshToken } from "./account";
 
 export const getApiUrl = (path) => {
-  return `https://links-back.herokuapp.com${path}`;
+  // return `http://localhost:3003${path}`;
+  return `http://192.168.2.121:3003${path}`;
 };
 
 export const getheaders = () => {
